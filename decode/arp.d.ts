@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { uint8, uint16 } from "../type_utils/int_decl";
+import { uint8, uint16 } from "../types/utils/int_decl";
 import { EthernetAddr } from "./ethernet_addr";
 import { IPv4Addr } from "./ipv4_addr";
 

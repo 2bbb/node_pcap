@@ -1,4 +1,4 @@
-import { BaseProtocolDecorder } from "../../type_utils/base_protocol_decoder";
+import { BaseProtocolDecorder } from "../../types/utils/base_protocol_decoder";
 
 export declare class HeaderExtension implements BaseProtocolDecorder {
     payload: any;

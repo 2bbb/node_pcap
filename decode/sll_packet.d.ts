@@ -1,6 +1,6 @@
 import { EventEmitter } from "events";
-import { BaseProtocolDecorder } from "../type_utils/base_protocol_decoder";
-import { uint16 } from "../type_utils/int_decl";
+import { BaseProtocolDecorder } from "../types/utils/base_protocol_decoder";
+import { uint16 } from "../types/utils/int_decl";
 import { SSLAddr } from "./sll_addr";
 
 export declare class SLLPacket implements BaseProtocolDecorder {

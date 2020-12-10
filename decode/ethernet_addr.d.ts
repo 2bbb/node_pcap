@@ -1,4 +1,4 @@
-import { uint8 } from "../type_utils/int_decl";
+import { uint8 } from "../types/utils/int_decl";
 
 export type EthernetAddrArray = [uint8, uint8, uint8, uint8, uint8, uint8];
 

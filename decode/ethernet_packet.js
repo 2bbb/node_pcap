@@ -48,6 +48,9 @@ EthernetPacket.prototype.decode = function (raw_packet, offset) {
         case 0x88cc: // LLDP - http://en.wikipedia.org/wiki/Link_Layer_Discovery_Protocol
             this.payload = "need to implement LLDP";
             break;
+        case 0x8899: // Realtek Remote Control Protocol
+            this.payload = "need to implement RRCP";
+            break;
         default:
             console.log("node_pcap: EthernetFrame() - Don't know how to decode ethertype " + this.ethertype);
         }
@@ -76,6 +79,9 @@ EthernetPacket.prototype.toString = function () {
         break;
     case 0x88cc:
         ret += " LLDP";
+        break;
+    case 0x8899:
+        ret += " RRCP";
         break;
     default:
         ret += " ethertype " + this.ethertype;

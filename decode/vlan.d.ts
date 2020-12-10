@@ -1,4 +1,4 @@
-import { uint8, uint16 } from "../type_utils/int_decl";
+import { uint8, uint16 } from "../types/utils/int_decl";
 
 export declare class Vlan {
     priority: uint8;

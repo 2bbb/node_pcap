@@ -1,6 +1,6 @@
 import { EventEmitter } from "events";
-import { BaseProtocolDecorder } from "../type_utils/base_protocol_decoder";
-import { uint8 } from "../type_utils/int_decl";
+import { BaseProtocolDecorder } from "../types/utils/base_protocol_decoder";
+import { uint8 } from "../types/utils/int_decl";
 import { IPv4 } from "./ipv4";
 import { IPv6 } from "./ipv6";
 

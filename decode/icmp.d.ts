@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { uint8, uint16, uint32 } from "../type_utils/int_decl";
+import { uint8, uint16, uint32 } from "../types/utils/int_decl";
 
 export declare class ICMP {
     constructor(emitter: EventEmitter | null);

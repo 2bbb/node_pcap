@@ -20,8 +20,6 @@ export interface SessionStats {
 
 export type TCPSessionState = "SYN_SNT" | "SYN_RCVD" | "ESTAB" | "FIN_WAIT" | "CLOSE_WAIT" | "LAST_ACK" | "CLOSING" | "CLOSED";
 
-type IPv4TCPPacket = PcapPacket;
-
 export declare class TCPSession extends EventEmitter {
     constructor();
 
@@ -59,23 +57,22 @@ export declare class TCPSession extends EventEmitter {
     recv_bytes_tcp: number;
     recv_bytes_payload: number;
 
-    track(packet: IPv4TCPPacket): void;
-
-    SYN_SENT(packet: IPv4TCPPacket): void;
-    SYN_RCVD(packet: IPv4TCPPacket): void;
-    ESTAB(packet: IPv4TCPPacket): void;
-    FIN_WAIT(packet: IPv4TCPPacket): void;
-    CLOSE_WAIT(packet: IPv4TCPPacket): void;
-    LAST_ACK(packet: IPv4TCPPacket): void;
-    CLOSING(packet: IPv4TCPPacket): void;
-    CLOSED(): void;
-
+    track(packet: PcapPacket): void;
     session_stats(): SessionStats;
+
+    private SYN_SENT(packet: PcapPacket): void;
+    private SYN_RCVD(packet: PcapPacket): void;
+    private ESTAB(packet: PcapPacket): void;
+    private FIN_WAIT(packet: PcapPacket): void;
+    private CLOSE_WAIT(packet: PcapPacket): void;
+    private LAST_ACK(packet: PcapPacket): void;
+    private CLOSING(packet: PcapPacket): void;
+    private CLOSED(): void;
 
     on(event: "start", listener: (session: TCPSession) => void): this;
     on(event: "end", listener: (session: TCPSession) => void): this;
-    on(event: "reset", listener: (session: TCPSession, type: "recv") => void): this;
     on(event: "syn retry", listener: (session: TCPSession) => void): this;
+    on(event: "reset", listener: (session: TCPSession, type: "recv") => void): this;
     on(event: "retransmit", listener: (session: TCPSession, type: "send" | "recv", ackno: number) => void): this;
     on(event: "data send", listener: (session: TCPSession, tcp_data: Buffer | null) => void): this;
     on(event: "data recv", listener: (session: TCPSession, tcp_data: Buffer | null) => void): this;
@@ -83,8 +80,8 @@ export declare class TCPSession extends EventEmitter {
   
     once(event: "start", listener: (session: TCPSession) => void): this;
     once(event: "end", listener: (session: TCPSession) => void): this;
-    once(event: "reset", listener: (session: TCPSession, type: "recv") => void): this;
     once(event: "syn retry", listener: (session: TCPSession) => void): this;
+    once(event: "reset", listener: (session: TCPSession, type: "recv") => void): this;
     once(event: "retransmit", listener: (session: TCPSession, type: "send" | "recv", ackno: number) => void): this;
     once(event: "data send", listener: (session: TCPSession, tcp_data: Buffer | null) => void): this;
     once(event: "data recv", listener: (session: TCPSession, tcp_data: Buffer | null) => void): this;
@@ -93,14 +90,13 @@ export declare class TCPSession extends EventEmitter {
 
 export declare class TCPTracker extends EventEmitter {
     constructor();
-    new(): TCPTracker;
-
+    
     sessions: {string: TCPSession};
-    track_packet(packet: IPv4TCPPacket): void;
+    track_packet(packet: PcapPacket): void;
 
-    on(event: "session", listener: (session: TCPSession) => void): this;
+    on(event: "session", listener: (session: TCPSession) => any): this;
     on(event: string, listener: Function): this;
 
-    once(event: "session", listener: (session: TCPSession) => void): this;
+    once(event: "session", listener: (session: TCPSession) => any): this;
     once(event: string, listener: Function): this;
 }

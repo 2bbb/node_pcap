@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
-import { uint16 } from "../type_utils/int_decl";
+import { uint16 } from "../types/utils/int_decl";
 import { Arp } from "./arp";
-import { BaseProtocolDecorder } from "../type_utils/base_protocol_decoder";
+import { BaseProtocolDecorder } from "../types/utils/base_protocol_decoder";
 import { EthernetAddr } from "./ethernet_addr";
 import { IPv4 } from "./ipv4";
 import { IPv6 } from "./ipv6";

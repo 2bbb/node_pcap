@@ -5,20 +5,22 @@ import { IPv4 } from './ipv4';
 import { RadioPacket } from './ieee802.11/radio_packet';
 import { SLLPacket } from './sll_packet';
 import { LinkType } from '../pcap';
+import { EventEmitter } from 'events';
+import { uint32 } from '../types/utils/int_decl';
 
 export type Payload = EthernetPacket | NullPacket | IPv4 | RadioPacket | SLLPacket;
 
 export declare class PcapHeader {
     constructor(raw_header: Buffer);
 
-    tv_sec: number;
-    tv_usec: number;
-    caplen: number;
-    len: number;
+    tv_sec: uint32;
+    tv_usec: uint32;
+    caplen: uint32;
+    len: uint32;
 }
 
 export declare class PcapPacket {
-    constructor(emitter: any);
+    constructor(emitter: EventEmitter | null);
 
     link_type: LinkType;
     pcap_header: PcapHeader;

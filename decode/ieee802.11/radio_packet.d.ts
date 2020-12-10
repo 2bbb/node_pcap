@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { uint16, uint32, uint8 } from "../../type_utils/int_decl";
+import { uint16, uint32, uint8 } from "../../types/utils/int_decl";
 
 export declare class RadioPacket {
     constructor(emitter: EventEmitter | null);
