@@ -1,11 +1,11 @@
 import { EventEmitter } from "events";
-import { BaseProtocolDecorder } from "../type_utils/base_protocol_decoder";
-import { uint8, uint16 } from "../type_utils/int_decl";
-import { Arp } from "./arp";
-import { IPv4 } from "./ipv4";
-import { IPv6 } from "./ipv6";
+import { BaseProtocolDecorder } from "../types/utils/base_protocol_decoder";
+import { uint8, uint16 } from "../types/utils/int_decl";
+import Arp from "./arp";
+import IPv4 from "./ipv4";
+import IPv6 from "./ipv6";
 
-export declare class LogicalLinkControl implements BaseProtocolDecorder {
+declare class LogicalLinkControl implements BaseProtocolDecorder {
     constructor(emitter: EventEmitter | null);
     emitter: EventEmitter | null;
     dsap: uint8;
@@ -22,3 +22,5 @@ export declare class LogicalLinkControl implements BaseProtocolDecorder {
     decode(raw_packet: Buffer, offset: number): this;
     toString(): string;
 }
+
+export = LogicalLinkControl;

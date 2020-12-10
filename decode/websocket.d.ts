@@ -1,15 +1,15 @@
 import { EventEmitter } from "events";
-import { uint8 } from "../type_utils/int_decl";
+import { uint8 } from "../types/utils/int_decl";
 
-export declare class WebSocketFrame {
+declare class WebSocketFrame {
     constructor();
     type: uint8 | null;
     data: string;
 }
 
-export type WebSocketParserState = "skip_response" | "frame_type" | "read_until_marker" | string;
+type WebSocketParserState = "skip_response" | "frame_type" | "read_until_marker" | string;
 
-export declare class WebSocketParser extends EventEmitter {
+declare class WebSocketParser extends EventEmitter {
     constructor(flag: string);
 
     buffer: Buffer;
@@ -25,3 +25,5 @@ export declare class WebSocketParser extends EventEmitter {
     once(event: "message", listener: (data: string) => any): this;
     once(event: string, listener: Function): this;
 }
+
+export = WebSocketParser;

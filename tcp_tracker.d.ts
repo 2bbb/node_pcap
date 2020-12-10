@@ -1,5 +1,5 @@
 import { EventEmitter } from 'events';
-import { PcapPacket } from './decode/pcap_packet';
+import PcapPacket = require('./decode/pcap_packet');
 
 export interface SessionStats {
     recv_times: {string: number};

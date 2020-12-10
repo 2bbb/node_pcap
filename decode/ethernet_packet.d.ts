@@ -1,13 +1,13 @@
 import { EventEmitter } from "events";
 import { uint16 } from "../types/utils/int_decl";
-import { Arp } from "./arp";
 import { BaseProtocolDecorder } from "../types/utils/base_protocol_decoder";
-import { EthernetAddr } from "./ethernet_addr";
-import { IPv4 } from "./ipv4";
-import { IPv6 } from "./ipv6";
-import { Vlan } from "./vlan";
+import Arp = require("./arp");
+import EthernetAddr = require("./ethernet_addr");
+import IPv4 = require("./ipv4");
+import IPv6 = require("./ipv6");
+import Vlan = require("./vlan");
 
-export declare class EthernetPacket implements BaseProtocolDecorder {
+declare class EthernetPacket implements BaseProtocolDecorder {
     constructor(emitter: EventEmitter | null);
 
     emitter: EventEmitter | null;
@@ -23,3 +23,5 @@ export declare class EthernetPacket implements BaseProtocolDecorder {
     decode(raw_packet: Buffer, offset: number): this;
     toString(): string;
 }
+
+export = EthernetPacket;

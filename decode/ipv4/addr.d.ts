@@ -1,6 +1,8 @@
-export type IPv4AddrArray = [number, number, number, number];
+import { uint8 } from "../../types/utils/int_decl";
 
-export declare class IPv4Addr {
+type IPv4AddrArray = [uint8, uint8, uint8, uint8];
+
+declare class IPv4Addr {
     addr: IPv4AddrArray;
     decoderName: "ipv4-addr";
     eventsOnDecode: false;
@@ -8,3 +10,5 @@ export declare class IPv4Addr {
     decode(raw_packet: Buffer, offset: number): this;
     toString(): string;
 }
+
+export = IPv4Addr;

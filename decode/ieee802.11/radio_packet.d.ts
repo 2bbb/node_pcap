@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { uint16, uint32, uint8 } from "../../types/utils/int_decl";
 
-export declare class RadioPacket {
+declare class RadioPacket {
     constructor(emitter: EventEmitter | null);
     emitter: EventEmitter | null;
 
@@ -15,3 +15,5 @@ export declare class RadioPacket {
     decode(raw_packet: Buffer, offset: number, options: any): this;
     toString(): string;
 }
+
+export = RadioPacket;

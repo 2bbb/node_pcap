@@ -1,16 +1,17 @@
 import { PacketWithHeader } from 'pcap';
-import { EthernetPacket } from './ethernet_packet';
-import { NullPacket } from './null_packet';
-import { IPv4 } from './ipv4';
-import { RadioPacket } from './ieee802.11/radio_packet';
-import { SLLPacket } from './sll_packet';
-import { LinkType } from '../pcap';
+import { LinkType } from 'pcap';
 import { EventEmitter } from 'events';
 import { uint32 } from '../types/utils/int_decl';
 
-export type Payload = EthernetPacket | NullPacket | IPv4 | RadioPacket | SLLPacket;
+import EthernetPacket = require('./ethernet_packet');
+import NullPacket = require('./null_packet');
+import IPv4 = require('./ipv4');
+import RadioPacket = require('./ieee802.11/radio_packet');
+import SLLPacket = require('./sll_packet');
 
-export declare class PcapHeader {
+type Payload = EthernetPacket | NullPacket | IPv4 | RadioPacket | SLLPacket;
+
+declare class PcapHeader {
     constructor(raw_header: Buffer);
 
     tv_sec: uint32;
@@ -19,7 +20,7 @@ export declare class PcapHeader {
     len: uint32;
 }
 
-export declare class PcapPacket {
+declare class PcapPacket {
     constructor(emitter: EventEmitter | null);
 
     link_type: LinkType;
@@ -30,3 +31,5 @@ export declare class PcapPacket {
     decode(packet_with_header: PacketWithHeader, options: any): PcapPacket;
     toString(): string;
 }
+
+export = PcapPacket;

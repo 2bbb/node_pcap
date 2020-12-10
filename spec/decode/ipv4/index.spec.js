@@ -1,7 +1,7 @@
-var IPv4 = require("../../decode/ipv4");
-var shouldBehaveLikeADecoder = require("./decode").shouldBehaveLikeADecoder;
+var IPv4 = require("../../../decode/ipv4");
+var shouldBehaveLikeADecoder = require("../decode").shouldBehaveLikeADecoder;
 var events = require("events");
-require("should");
+require("../ipv6/headers/node_modules/should");
 
 describe("IPv4", function(){
   beforeEach(function () {

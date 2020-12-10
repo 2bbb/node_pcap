@@ -1,10 +1,10 @@
 import { PacketWithHeader } from 'pcap';
 
-import { EthernetPacket as EthernetPacketType } from "./ethernet_packet";
-import { IPv4 } from "./ipv4";
-import { IPv6 } from "./ipv6";
-import { Arp } from "./arp";
-import { PcapPacket as PcapPacketType} from "./pcap_packet";
+import EthernetPacketType = require("./ethernet_packet");
+import IPv4 = require("./ipv4");
+import IPv6 = require("./ipv6");
+import Arp = require("./arp");
+import PcapPacketType = require("./pcap_packet");
 
 export const EthernetPacket: typeof EthernetPacketType;
 export const IPv4Packet: typeof IPv4;

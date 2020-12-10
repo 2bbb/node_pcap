@@ -1,9 +1,9 @@
 import { EventEmitter } from "events";
 import { BaseProtocolDecorder } from "../types/utils/base_protocol_decoder";
 import { uint16 } from "../types/utils/int_decl";
-import { SSLAddr } from "./sll_addr";
+import SSLAddr = require("./sll_addr");
 
-export declare class SLLPacket implements BaseProtocolDecorder {
+declare class SLLPacket implements BaseProtocolDecorder {
     constructor(emitter: EventEmitter | null);
 
     emitter: EventEmitter | null;
@@ -20,3 +20,5 @@ export declare class SLLPacket implements BaseProtocolDecorder {
     decode(raw_packet: Buffer, offset: number): this;
     toString(): string;
 }
+
+export = SLLPacket;

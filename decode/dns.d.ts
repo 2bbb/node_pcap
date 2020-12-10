@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
-import { uint8, uint16, uint32 } from "../type_utils/int_decl";
+import { uint8, uint16, uint32 } from "../types/utils/int_decl";
 
-export declare class DnsFlags {
+declare class DnsFlags {
     constructor();
 
     isReponse: boolean;
@@ -17,7 +17,7 @@ export declare class DnsFlags {
     toString(): string;
 }
 
-export declare class DNSRR {
+declare class DNSRR {
     constructor(is_question: boolean);
 
     name: string;
@@ -33,7 +33,7 @@ export declare class DNSRR {
     read_name(): string;
 }
 
-export declare class DNSRRSet {
+declare class DNSRRSet {
     constructor(count: number);
     rrs: DNSRR[];
 
@@ -70,7 +70,7 @@ export declare class DNS {
     decode_RRs(count: number, is_question: boolean): DNSRRSet | null;
 }
 
-export function type_to_string(type_num: uint8): string;
-export function qtype_to_string(qtype_num: uint8): string;
-export function class_to_string(class_num: uint8): string;
-export function qclass_to_string(qclass_num: uint8): string;
+declare function type_to_string(type_num: uint8): string;
+declare function qtype_to_string(qtype_num: uint8): string;
+declare function class_to_string(class_num: uint8): string;
+declare function qclass_to_string(qclass_num: uint8): string;

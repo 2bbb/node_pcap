@@ -1,6 +1,6 @@
 import { uint8, uint16 } from "../types/utils/int_decl";
 
-export declare class Vlan {
+declare class Vlan {
     priority: uint8;
     canonical_format:uint8;
     id: uint16;
@@ -11,3 +11,5 @@ export declare class Vlan {
     decode(raw_packet: Buffer, offset: number);
     toString(): string;
 }
+
+export = Vlan;

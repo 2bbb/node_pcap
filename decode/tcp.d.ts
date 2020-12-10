@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { uint8, uint16, uint32 } from "../types/utils/int_decl";
 
-export declare class TCPFlags {
+declare class TCPFlags {
     constructor(emitter: EventEmitter | null);
 
     emitter: EventEmitter | null;
@@ -19,7 +19,7 @@ export declare class TCPFlags {
     toString(): string;
 }
 
-export declare class TCPOptions {
+declare class TCPOptions {
     mss: uint16;
     window_scale: uint8;
     sack_ok: boolean;
@@ -31,7 +31,7 @@ export declare class TCPOptions {
     toString(): string;
 }
 
-export declare class TCP {
+declare class TCP {
     constructor(emitter: EventEmitter | null);
 
     emitter: EventEmitter | null;
@@ -56,3 +56,5 @@ export declare class TCP {
     decode(raw_packet: Buffer, offset: number, len: number): this;
     toString(): string;
 }
+
+export = TCP;

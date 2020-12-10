@@ -1,9 +1,9 @@
 import { EventEmitter } from "events";
 import { uint8, uint16 } from "../types/utils/int_decl";
-import { EthernetAddr } from "./ethernet_addr";
-import { IPv4Addr } from "./ipv4_addr";
+import EthernetAddr = require("./ethernet_addr");
+import IPv4Addr = require("./ipv4/addr");
 
-export declare class Arp {
+declare class Arp {
     constructor(emitter: EventEmitter | null);
     emitter: EventEmitter | null;
 
@@ -19,3 +19,5 @@ export declare class Arp {
 
     decode(raw_packet: Buffer, offset: number): this;
 }
+
+export = Arp;

@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { uint8, uint16, uint32 } from "../types/utils/int_decl";
 
-export declare class ICMP {
+declare class ICMP {
     constructor(emitter: EventEmitter | null);
     type: uint8;
     code: uint8;
@@ -13,3 +13,5 @@ export declare class ICMP {
     decode(raw_packet: Buffer, offset: number): this;
     toString(): string;
 }
+
+export = ICMP;

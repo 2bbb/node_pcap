@@ -1,6 +1,6 @@
 import { uint8 } from "../types/utils/int_decl";
 
-export declare class SSLAddr {
+declare class SSLAddr {
     constructor(raw_packet: Buffer, offset: number, len: number);
     
     addr: uint8[];
@@ -9,3 +9,5 @@ export declare class SSLAddr {
 
     toString(): string;
 }
+
+export = SSLAddr;
