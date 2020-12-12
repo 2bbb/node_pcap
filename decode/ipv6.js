@@ -1,5 +1,5 @@
-var IPv6Addr = require("./addr");
-var protocols = require("../ip_protocols");
+var IPv6Addr = require("./ipv6_addr");
+var protocols = require("./ip_protocols");
 
 function IPv6(emitter) {
     this.emitter = emitter;

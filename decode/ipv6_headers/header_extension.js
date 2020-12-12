@@ -1,4 +1,4 @@
-var protocols = require("../../ip_protocols");
+var protocols = require("../ip_protocols");
 
 // A generic header extension class
 // https://tools.ietf.org/html/rfc6564
