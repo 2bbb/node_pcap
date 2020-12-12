@@ -1,5 +1,7 @@
 import { EventEmitter } from "events";
 import { uint8, uint16, uint32 } from "../types/utils/int_decl";
+import IPv4Addr from "./ipv4_addr";
+import IPv6Addr from "./ipv6_addr";
 
 declare class DnsFlags {
     constructor();
@@ -21,16 +23,16 @@ declare class DNSRR {
     constructor(is_question: boolean);
 
     name: string;
-    type: any;
-    class: any;
-    ttl: any;
-    rdlength: any;
-    rdate: any;
+    type: uint16;
+    class: uint16;
+    ttl: uint32;
+    rdlength: uint16;
+    rdata: IPv4Addr | IPv6Addr;
     is_question: boolean;
 
-    toString(): string;
-
     read_name(): string;
+    
+    toString(): string;
 }
 
 declare class DNSRRSet {
@@ -41,7 +43,7 @@ declare class DNSRRSet {
 }
 
 export declare class DNS {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter: EventEmitter | undefined);
 
     raw_packet: Buffer;
     offset: number;
@@ -53,12 +55,12 @@ export declare class DNS {
     nscount: uint16;
     arcount: uint16;
 
-    question: DNSRRSet | null;
-    answer: DNSRRSet | null;
-    authority: DNSRRSet | null;
-    additional: DNSRRSet | null;
+    question?: DNSRRSet;
+    answer?: DNSRRSet;
+    authority?: DNSRRSet;
+    additional?: DNSRRSet;
     
-    _error: any;
+    _error: string | undefined;
 
     decoderName: "dns";
     eventsOnDecode: true;
@@ -67,7 +69,7 @@ export declare class DNS {
     toString(): string;
 
     decode_RR(is_question: boolean): DNSRR;
-    decode_RRs(count: number, is_question: boolean): DNSRRSet | null;
+    decode_RRs(count: number, is_question: boolean): DNSRRSet | undefined;
 }
 
 declare function type_to_string(type_num: uint8): string;

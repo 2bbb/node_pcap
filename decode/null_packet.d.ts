@@ -6,12 +6,12 @@ import IPv4 = require("./ipv4");
 import IPv6 = require("./ipv6");
 
 declare class NullPacket implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter: EventEmitter | undefined);
 
-    emitter: EventEmitter | null;
+    emitter: EventEmitter | undefined;
     pftype: 2 | 30 | uint8;
     payload: IPv4 | IPv6;
-    _error: string | null;
+    _error: string | undefined;
 
     decoderName: "null-packet";
     eventsOnDecode: false;

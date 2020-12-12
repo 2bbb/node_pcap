@@ -33,7 +33,7 @@ export declare class TCPSession extends EventEmitter {
 
     syn_time: number;
     missed_syn: boolean;
-    connect_time: number | null;
+    connect_time: number | undefined;
 
     send_isn: number;
     send_window_scale: number;
@@ -46,12 +46,12 @@ export declare class TCPSession extends EventEmitter {
     send_bytes_tcp: number;
     send_bytes_payload: number;
 
-    recv_isn: number | null;
-    recv_window_scale: number | null;
+    recv_isn: number | undefined;
+    recv_window_scale: number | undefined;
     recv_packets: {number: number};
     recv_acks: {number: number};
     recv_retrans: {number: number};
-    recv_next_seq: number | null;
+    recv_next_seq: number | undefined;
     recv_acked_seq: any;
     recv_bytes_ip: number;
     recv_bytes_tcp: number;
@@ -74,8 +74,8 @@ export declare class TCPSession extends EventEmitter {
     on(event: "syn retry", listener: (session: TCPSession) => void): this;
     on(event: "reset", listener: (session: TCPSession, type: "recv") => void): this;
     on(event: "retransmit", listener: (session: TCPSession, type: "send" | "recv", ackno: number) => void): this;
-    on(event: "data send", listener: (session: TCPSession, tcp_data: Buffer | null) => void): this;
-    on(event: "data recv", listener: (session: TCPSession, tcp_data: Buffer | null) => void): this;
+    on(event: "data send", listener: (session: TCPSession, tcp_data: Buffer | undefined) => void): this;
+    on(event: "data recv", listener: (session: TCPSession, tcp_data: Buffer | undefined) => void): this;
     on(event: string, listener: Function): this;
   
     once(event: "start", listener: (session: TCPSession) => void): this;
@@ -83,8 +83,8 @@ export declare class TCPSession extends EventEmitter {
     once(event: "syn retry", listener: (session: TCPSession) => void): this;
     once(event: "reset", listener: (session: TCPSession, type: "recv") => void): this;
     once(event: "retransmit", listener: (session: TCPSession, type: "send" | "recv", ackno: number) => void): this;
-    once(event: "data send", listener: (session: TCPSession, tcp_data: Buffer | null) => void): this;
-    once(event: "data recv", listener: (session: TCPSession, tcp_data: Buffer | null) => void): this;
+    once(event: "data send", listener: (session: TCPSession, tcp_data: Buffer | undefined) => void): this;
+    once(event: "data recv", listener: (session: TCPSession, tcp_data: Buffer | undefined) => void): this;
     once(event: string, listener: Function): this;
 }
 

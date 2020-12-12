@@ -3,7 +3,7 @@ import { uint8 } from "../types/utils/int_decl";
 
 declare class WebSocketFrame {
     constructor();
-    type: uint8 | null;
+    type: uint8 | undefined;
     data: string;
 }
 
