@@ -1,4 +1,4 @@
-var should = require("./ipv6/headers/node_modules/should");
+var should = require("./ipv6_headers/node_modules/should");
 var sinon = require("sinon");
 exports.shouldBehaveLikeADecoder = function(decoderName, raisesEvent){
   it("is a function", function(){
