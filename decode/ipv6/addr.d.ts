@@ -1,4 +1,4 @@
-import { IPv6AddrArray } from "../../types/utils/addresses";
+import { IPv6AddrArray } from "../../types/addresses";
 
 declare class IPv6Addr {
     constructor();
