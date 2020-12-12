@@ -1,6 +1,4 @@
-import { uint8 } from "../types/utils/int_decl";
-
-type EthernetAddrArray = [uint8, uint8, uint8, uint8, uint8, uint8];
+import { EthernetAddrArray } from "../types/utils/addresses";
 
 declare class EthernetAddr {
     constructor(raw_packet: Buffer, offset: number);
