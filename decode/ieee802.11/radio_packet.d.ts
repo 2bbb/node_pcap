@@ -1,5 +1,5 @@
 import { EventEmitter } from "events";
-import { PcapPacketDecodeOption } from "../../types/pcap_packet_decode_option";
+import { PcapPacketDecodeOptions } from "../../types/pcap_packet_decode_options";
 import { uint16, uint32, uint8 } from "../../types/utils/int_decl";
 
 declare class RadioPacket {
@@ -13,7 +13,7 @@ declare class RadioPacket {
     fields: any;
     _decoderCache: object;
 
-    decode(raw_packet: Buffer, offset: number, options: PcapPacketDecodeOption): this;
+    decode(raw_packet: Buffer, offset: number, options?: PcapPacketDecodeOptions): this;
     toString(): string;
 }
 
