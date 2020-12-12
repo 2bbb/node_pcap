@@ -2,7 +2,7 @@ import { EventEmitter } from "events";
 import { EthernetAddrArray, IPv4AddrArray, IPv6AddrArray } from "../../types/utils/addresses";
 import { uint16, uint32, uint8 } from "../../types/utils/int_decl";
 import EthernetAddr from "../ethernet_addr";
-import IPv4Addr from "../ipv4/addr";
+import IPv4Addr from "../ipv4_addr";
 
 export declare class BaseTLV {
     constructor(emitter: EventEmitter | null);
