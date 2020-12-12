@@ -3,7 +3,7 @@ var protocols = new Array(256);
 module.exports = protocols; 
 
 
-var IpV6HeaderExtension = require("./ipv6/headers/header_extension");
+var IpV6HeaderExtension = require("./ipv6_headers/header_extension");
 
 //https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml
 function init(){
@@ -16,7 +16,7 @@ function init(){
   protocols[41]  = require("./ipv6");
   protocols[43]  = IpV6HeaderExtension;
   protocols[51]  = IpV6HeaderExtension;
-  protocols[59]  = require("./ipv6/headers/no_next");
+  protocols[59]  = require("./ipv6_headers/no_next");
   protocols[60]  = IpV6HeaderExtension;
   protocols[135] = IpV6HeaderExtension;
   protocols[139] = IpV6HeaderExtension;

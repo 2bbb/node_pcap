@@ -1,8 +1,8 @@
 import { EventEmitter } from "events";
-import { uint8, uint16, uint32 } from "../../types/utils/int_decl";
-import { BaseProtocolDecorder } from "../../types/utils/base_protocol_decoder";
-import IPv4Addr = require("./addr");
-import { IPProtocolPacket } from "../ip_protocol_packet";
+import { uint8, uint16, uint32 } from "../types/utils/int_decl";
+import { BaseProtocolDecorder } from "../types/utils/base_protocol_decoder";
+import IPv4Addr = require("./ipv4_addr");
+import { IPProtocolPacket } from "../types/ip_protocol_packet";
 
 declare class IPFlags {
     constructor(emitter: EventEmitter | null);

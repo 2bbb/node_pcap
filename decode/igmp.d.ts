@@ -1,6 +1,6 @@
 import { EventEmitter } from "events";
 import { uint8, uint16, uint32 } from "../types/utils/int_decl";
-import IPv4Addr = require("./ipv4/addr");
+import IPv4Addr = require("./ipv4_addr");
 
 declare class IGMP {
     constructor(emitter: EventEmitter | null);
