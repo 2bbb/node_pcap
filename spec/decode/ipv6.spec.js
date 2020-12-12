@@ -1,8 +1,8 @@
 var IPv6 = require("../../decode/ipv6");
-var NoNext = require("../../decode/ipv6_headers/no_next");
+var NoNext = require("../../decode/ipv6headers/no_next");
 var shouldBehaveLikeADecoder = require("./decode").shouldBehaveLikeADecoder;
 var events = require("events");
-require("../ipv6_headers/node_modules/should");
+require("../ipv6headers/node_modules/should");
 
 describe("IPv6", function(){
   beforeEach(function () {
