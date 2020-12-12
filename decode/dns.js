@@ -1,5 +1,5 @@
-var IPv4Addr = require("./ipv4/addr");
-var IPv6Addr = require("./ipv6/addr");
+var IPv4Addr = require("./ipv4_addr");
+var IPv6Addr = require("./ipv6_addr");
 
 function DnsFlags() {
     // is this a response?

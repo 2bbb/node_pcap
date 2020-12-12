@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { uint8, uint16 } from "../types/utils/int_decl";
 import EthernetAddr = require("./ethernet_addr");
-import IPv4Addr = require("./ipv4/addr");
+import IPv4Addr = require("./ipv4_addr");
 
 declare class Arp {
     constructor(emitter: EventEmitter | null);

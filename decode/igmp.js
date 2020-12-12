@@ -1,4 +1,4 @@
-var IPv4Addr = require("./ipv4/addr");
+var IPv4Addr = require("./ipv4_addr");
 
 function IGMP(emitter) {
     this.emitter = emitter;
