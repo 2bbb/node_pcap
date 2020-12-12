@@ -1,5 +1,4 @@
-import { PacketWithHeader } from 'pcap';
-import { LinkType } from 'pcap';
+import { PacketWithHeader, LinkType } from '../pcap';
 import { EventEmitter } from 'events';
 import { uint32 } from '../types/utils/int_decl';
 

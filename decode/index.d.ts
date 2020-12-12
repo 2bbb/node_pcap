@@ -1,4 +1,4 @@
-import { PacketWithHeader } from 'pcap';
+import { PacketWithHeader } from '../pcap';
 
 import EthernetPacketType = require("./ethernet_packet");
 import IPv4 = require("./ipv4");
