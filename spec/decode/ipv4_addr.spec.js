@@ -1,5 +1,5 @@
 var IPv4Addr = require("../../decode/ipv4_addr");
-require("../ipv6_headers/node_modules/should");
+require("../ipv6headers/node_modules/should");
 
 describe("IPv4Addr", function(){
   var exampleIp, instance;
