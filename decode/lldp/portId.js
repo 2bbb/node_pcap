@@ -1,5 +1,5 @@
 var EthernetAddr = require("../ethernet_addr");
-var IPv4Addr = require("../ipv4_addr");
+var IPv4Addr = require("../ipv4/addr");
 
 function portId() {
 }
