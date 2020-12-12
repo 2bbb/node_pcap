@@ -1,11 +1,14 @@
 /// <reference types="node" />
 import { EventEmitter } from 'events';
+import * as tcp_tracker from './tcp_tracker';
+import { Decode } from './decode';
+import * as dns_cache from './dns_cache';
 
 // FIXME: write rest of the typings
-export const decode: any;
-export const TCPTracker: any;
-export const TCPSession: any;
-export const DNSCache: any;
+export const decode: Decode;
+export const DNSCache: typeof dns_cache.DNSCache;
+export const TCPTracker: typeof tcp_tracker.TCPTracker;
+export const TCPSession: typeof tcp_tracker.TCPSession;
 
 /**
  * format of the link-layer headers; `LINKTYPE_<...>` string, see
@@ -66,6 +69,8 @@ export declare class PcapSession extends EventEmitter {
 
     /** Inject a packet into the interface */
     inject(data: Buffer): void;
+
+    on(event: "packet", listener: (packet: PacketWithHeader) => void): this;
 }
 
 export interface PacketWithHeader {

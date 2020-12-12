@@ -1,5 +1,5 @@
-var IPv6Addr = require("../../decode/ipv6_addr");
-require("should");
+var IPv6Addr = require("../../decode/ipv6/addr");
+require("./headers/node_modules/should");
 
 describe("IPv6Addr", function(){
   var exampleIp, instance;
