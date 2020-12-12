@@ -16,7 +16,7 @@ declare class IPv6 implements BaseProtocolDecorder {
     hopLimit: uint8;
     saddr: IPv6Addr;
     daddr: IPv6Addr;
-    protocolName: string | "Unknown";
+    protocolName: "Unknown" | string | null;
     payload: IPProtocolPacket;
 
     decoderName: "ipv6";
