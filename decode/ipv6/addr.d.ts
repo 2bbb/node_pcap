@@ -1,9 +1,10 @@
-import { uint8 } from "../../types/utils/int_decl";
-
-type IPv6AddrArray = [uint8, uint8, uint8, uint8, uint8, uint8, uint8, uint8, uint8, uint8, uint8, uint8, uint8, uint8, uint8, uint8];
+import { IPv6AddrArray } from "../../types/utils/addresses";
 
 declare class IPv6Addr {
+    constructor();
+
     addr: IPv6AddrArray;
+    
     decoderName: "ipv6-addr";
     eventsOnDecode: false;
 

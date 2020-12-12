@@ -1,6 +1,4 @@
-import { uint8 } from "../../types/utils/int_decl";
-
-type IPv4AddrArray = [uint8, uint8, uint8, uint8];
+import { IPv4AddrArray } from "../../types/utils/addresses";
 
 declare class IPv4Addr {
     addr: IPv4AddrArray;
