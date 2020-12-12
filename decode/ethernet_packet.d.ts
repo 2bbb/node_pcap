@@ -8,14 +8,14 @@ import IPv6 = require("./ipv6");
 import Vlan = require("./vlan");
 
 declare class EthernetPacket implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter: EventEmitter | undefined);
 
-    emitter: EventEmitter | null;
+    emitter: EventEmitter | undefined;
     dhost: EthernetAddr;
     shost: EthernetAddr;
     ethertype: uint16;
     vlan: Vlan;
-    payload: IPv4 | Arp | IPv6 | string | null;
+    payload: IPv4 | Arp | IPv6 | string | undefined;
 
     decoderName: "ethernet-packet";
     eventsOnDecode: false;

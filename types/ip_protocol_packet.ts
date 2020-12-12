@@ -7,4 +7,4 @@ import NoNext = require("../decode/ipv6headers/no_next");
 import TCP = require("../decode/tcp");
 import UDP = require("../decode/udp");
 
-export type IPProtocolPacket = ICMP | IGMP | IPv4 | TCP | UDP | IPv6 | NoNext | HeaderExtension | null;
+export type IPProtocolPacket = ICMP | IGMP | IPv4 | TCP | UDP | IPv6 | NoNext | HeaderExtension | undefined;

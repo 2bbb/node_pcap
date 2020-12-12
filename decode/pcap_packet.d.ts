@@ -1,5 +1,4 @@
-import { PacketWithHeader } from 'pcap';
-import { LinkType } from 'pcap';
+import { PacketWithHeader, LinkType } from '../pcap';
 import { EventEmitter } from 'events';
 import { uint32 } from '../types/utils/int_decl';
 
@@ -22,11 +21,11 @@ declare class PcapHeader {
 }
 
 declare class PcapPacket {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter: EventEmitter | undefined);
 
     link_type: LinkType;
     pcap_header: PcapHeader;
-    payload: Payload | null;
+    payload: Payload | undefined;
     emitter: any;
 
     decode(packet_with_header: PacketWithHeader, options?: PcapPacketDecodeOptions): PcapPacket;

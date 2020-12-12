@@ -6,15 +6,15 @@ import IPv4 from "./ipv4";
 import IPv6 from "./ipv6";
 
 declare class LogicalLinkControl implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | null);
-    emitter: EventEmitter | null;
+    constructor(emitter: EventEmitter | undefined);
+    emitter: EventEmitter | undefined;
     dsap: uint8;
     ssap: uint8;
     controlField: uint8;
     orgCode: [uint8, uint8, uint8];
     type: uint16;
-    _error: string | null;
-    payload: IPv4 | IPv6 | Arp | null;
+    _error: string | undefined;
+    payload: IPv4 | IPv6 | Arp | undefined;
 
     decoderName: "llc";
     eventsOnDecode: true;
