@@ -1,5 +1,5 @@
-var IPv4Addr = require("./addr");
-var protocols = require("../ip_protocols");
+var IPv4Addr = require("./ipv4_addr");
+var protocols = require("./ip_protocols");
 
 
 function IPFlags(emitter) {

@@ -1,4 +1,4 @@
-import { IPv4AddrArray } from "../../types/utils/addresses";
+import { IPv4AddrArray } from "../types/addresses";
 
 declare class IPv4Addr {
     addr: IPv4AddrArray;

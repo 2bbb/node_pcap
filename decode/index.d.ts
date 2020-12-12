@@ -5,6 +5,7 @@ import IPv4 = require("./ipv4");
 import IPv6 = require("./ipv6");
 import Arp = require("./arp");
 import PcapPacketType = require("./pcap_packet");
+import { PcapPacketDecodeOptions } from '../types/pcap_packet_decode_options';
 
 export const EthernetPacket: typeof EthernetPacketType;
 export const IPv4Packet: typeof IPv4;
