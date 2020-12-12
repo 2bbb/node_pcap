@@ -8,7 +8,7 @@ import NullPacket = require('./null_packet');
 import IPv4 = require('./ipv4');
 import RadioPacket = require('./ieee802.11/radio_packet');
 import SLLPacket = require('./sll_packet');
-import { PcapPacketDecodeOption } from '../types/pcap_packet_decode_option';
+import { PcapPacketDecodeOptions } from '../types/pcap_packet_decode_options';
 
 type Payload = EthernetPacket | NullPacket | IPv4 | RadioPacket | SLLPacket;
 
@@ -29,7 +29,7 @@ declare class PcapPacket {
     payload: Payload | null;
     emitter: any;
 
-    decode(packet_with_header: PacketWithHeader, options: PcapPacketDecodeOption): PcapPacket;
+    decode(packet_with_header: PacketWithHeader, options?: PcapPacketDecodeOptions): PcapPacket;
     toString(): string;
 }
 

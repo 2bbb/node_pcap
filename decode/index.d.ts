@@ -13,8 +13,8 @@ export const ArpPacket: typeof Arp;
 export const PcapPacket: typeof PcapPacketType;
 
 interface Decode {
-    (packet: PacketWithHeader, emitter?: Function, options?: any): PcapPacketType;
-    packet(packet: PacketWithHeader, emitter?: Function, options?: any): PcapPacketType;
+    (packet: PacketWithHeader, emitter?: Function, options?: PcapPacketDecodeOptions): PcapPacketType;
+    packet(packet: PacketWithHeader, emitter?: Function, options?: PcapPacketDecodeOptions): PcapPacketType;
 }
 
 export const decode: Decode;
