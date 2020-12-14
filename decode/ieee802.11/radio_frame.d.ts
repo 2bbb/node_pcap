@@ -6,7 +6,7 @@ import RadioBeaconFrame from "./radio_beacon_frame";
 import RadioProbeFrame from "./radio_probe_frame";
 
 declare class RadioFrameFlags {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
     
     emitter: EventEmitter | undefined;
     raw: uint8;
@@ -20,7 +20,7 @@ declare class RadioFrameFlags {
 }
 
 declare class RadioFrame {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
 
     emitter: EventEmitter | undefined;
     frameControl: uint16;

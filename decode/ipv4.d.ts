@@ -5,7 +5,7 @@ import IPv4Addr = require("./ipv4_addr");
 import { IPProtocolPacket } from "../types/ip_protocol_packet";
 
 declare class IPFlags {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
 
     emitter: EventEmitter | undefined;
     reserved: boolean;
@@ -17,7 +17,7 @@ declare class IPFlags {
 }
 
 declare class IPv4 implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
 
     emitter: EventEmitter | undefined;
     version: uint8;

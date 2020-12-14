@@ -3,7 +3,7 @@ import { PcapPacketDecodeOptions } from "../../types/pcap_packet_decode_options"
 import { uint16, uint32, uint8 } from "../../types/utils/int_decl";
 
 declare class RadioPacket {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
     emitter: EventEmitter | undefined;
 
     headerRevision: uint8;

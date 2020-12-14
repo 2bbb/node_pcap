@@ -2,7 +2,7 @@ import { EventEmitter } from "events";
 import { uint8, uint16, uint32 } from "../types/utils/int_decl";
 
 declare class TCPFlags {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
 
     emitter: EventEmitter | undefined;
     nonce: boolean;
@@ -20,19 +20,19 @@ declare class TCPFlags {
 }
 
 declare class TCPOptions {
-    mss: uint16;
-    window_scale: uint8;
-    sack_ok: boolean;
-    sack: [uint32, uint32][];
-    timestamp: uint32;
-    echo: uint32;
+    mss: uint16 | null;
+    window_scale: uint8 | null;
+    sack_ok: boolean | null;
+    sack: [uint32, uint32][] | null;
+    timestamp: uint32 | null;
+    echo: uint32 | null;
 
     decode(raw_packet: Buffer, offset: number, len: number): this;
     toString(): string;
 }
 
 declare class TCP {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
 
     emitter: EventEmitter | undefined;
     sport: uint16;

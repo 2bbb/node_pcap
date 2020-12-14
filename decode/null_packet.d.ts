@@ -6,7 +6,7 @@ import IPv4 = require("./ipv4");
 import IPv6 = require("./ipv6");
 
 declare class NullPacket implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
 
     emitter: EventEmitter | undefined;
     pftype: 2 | 30 | uint8;

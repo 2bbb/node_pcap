@@ -1,7 +1,7 @@
 import { EventEmitter } from "events";
 import { uint8, uint16, uint32 } from "../types/utils/int_decl";
-import IPv4Addr from "./ipv4_addr";
-import IPv6Addr from "./ipv6_addr";
+import IPv4Addr = require("./ipv4_addr");
+import IPv6Addr = require("./ipv6_addr");
 
 declare class DnsFlags {
     constructor();
@@ -42,8 +42,8 @@ declare class DNSRRSet {
     toString(): string;
 }
 
-export declare class DNS {
-    constructor(emitter: EventEmitter | undefined);
+declare class DNS {
+    constructor(emitter?: EventEmitter);
 
     raw_packet: Buffer;
     offset: number;
@@ -76,3 +76,5 @@ declare function type_to_string(type_num: uint8): string;
 declare function qtype_to_string(qtype_num: uint8): string;
 declare function class_to_string(class_num: uint8): string;
 declare function qclass_to_string(qclass_num: uint8): string;
+
+export = DNS;
