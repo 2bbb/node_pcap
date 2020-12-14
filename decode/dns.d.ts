@@ -1,5 +1,7 @@
 import { EventEmitter } from "events";
 import { uint8, uint16, uint32 } from "../types/utils/int_decl";
+import IPv4Addr = require("./ipv4_addr");
+import IPv6Addr = require("./ipv6_addr");
 
 declare class DnsFlags {
     constructor();

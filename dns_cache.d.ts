@@ -1,6 +1,6 @@
 import { IpcNetConnectOpts } from "net";
 
-export declare class DNSCache {
+declare class DNSCache {
     constructor();
 
     cache: {string: string};
