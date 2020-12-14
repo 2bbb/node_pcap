@@ -5,7 +5,7 @@ import IPv6Addr = require("./ipv6_addr");
 import { IPProtocolPacket } from "../types/ip_protocol_packet";
 
 declare class IPv6 implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
 
     emitter: EventEmitter | undefined;
     version: uint8;
@@ -16,7 +16,7 @@ declare class IPv6 implements BaseProtocolDecorder {
     hopLimit: uint8;
     saddr: IPv6Addr;
     daddr: IPv6Addr;
-    protocolName: "Unknown" | string | undefined;
+    protocolName: "Unknown" | string | null;
     payload: IPProtocolPacket;
 
     decoderName: "ipv6";

@@ -43,7 +43,7 @@ declare class DNSRRSet {
 }
 
 declare class DNS {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
 
     raw_packet: Buffer;
     offset: number;

@@ -2,7 +2,7 @@ import { EventEmitter } from "events";
 import { uint8, uint16, uint32 } from "../types/utils/int_decl";
 
 declare class ICMP {
-    constructor(emitter: EventEmitter | undefined);
+    constructor(emitter?: EventEmitter);
     type: uint8;
     code: uint8;
     checksum: uint16;
