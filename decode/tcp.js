@@ -160,7 +160,7 @@ TCPOptions.prototype.decode = function (raw_packet, offset, len) {
             break;
         default:
             this._error = "Don't know how to process TCP option " + raw_packet[offset];
-            console.error(this_error);
+            console.error(this.error);
             return;
         }
     }
