@@ -5,9 +5,9 @@ import IPv6Addr = require("./ipv6_addr");
 import { IPProtocolPacket } from "../types/ip_protocol_packet";
 
 declare class IPv6 implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter?: EventEmitter);
 
-    emitter: EventEmitter | null;
+    emitter: EventEmitter | undefined;
     version: uint8;
     trafficClass: uint8;
     flowLabel: uint32;

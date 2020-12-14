@@ -4,9 +4,9 @@ import { uint16 } from "../types/utils/int_decl";
 import SSLAddr = require("./sll_addr");
 
 declare class SLLPacket implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter?: EventEmitter);
 
-    emitter: EventEmitter | null;
+    emitter: EventEmitter | undefined;
     packet_type: uint16;
     address_type: uint16;
     address_len: uint16;

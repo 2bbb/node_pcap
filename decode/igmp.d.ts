@@ -3,7 +3,7 @@ import { uint8, uint16, uint32 } from "../types/utils/int_decl";
 import IPv4Addr = require("./ipv4_addr");
 
 declare class IGMP {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter?: EventEmitter);
 
     type: uint8;
     version: 1 | 2 | 3;

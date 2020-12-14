@@ -4,8 +4,8 @@ import EthernetAddr = require("./ethernet_addr");
 import IPv4Addr = require("./ipv4_addr");
 
 declare class Arp {
-    constructor(emitter: EventEmitter | null);
-    emitter: EventEmitter | null;
+    constructor(emitter?: EventEmitter);
+    emitter: EventEmitter | undefined;
 
     htype: uint16;
     ptype: uint16;

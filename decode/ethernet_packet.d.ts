@@ -8,9 +8,9 @@ import IPv6 = require("./ipv6");
 import Vlan = require("./vlan");
 
 declare class EthernetPacket implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter?: EventEmitter);
 
-    emitter: EventEmitter | null;
+    emitter: EventEmitter | undefined;
     dhost: EthernetAddr;
     shost: EthernetAddr;
     ethertype: uint16;

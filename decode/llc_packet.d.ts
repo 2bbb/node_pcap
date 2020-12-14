@@ -6,8 +6,8 @@ import IPv4 from "./ipv4";
 import IPv6 from "./ipv6";
 
 declare class LogicalLinkControl implements BaseProtocolDecorder {
-    constructor(emitter: EventEmitter | null);
-    emitter: EventEmitter | null;
+    constructor(emitter?: EventEmitter);
+    emitter: EventEmitter | undefined;
     dsap: uint8;
     ssap: uint8;
     controlField: uint8;

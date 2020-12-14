@@ -2,9 +2,9 @@ import { EventEmitter } from "events";
 import { uint8, uint16, uint32 } from "../types/utils/int_decl";
 
 declare class TCPFlags {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter?: EventEmitter);
 
-    emitter: EventEmitter | null;
+    emitter: EventEmitter | undefined;
     nonce: boolean;
     cwr: boolean;
     ece: boolean;
@@ -32,9 +32,9 @@ declare class TCPOptions {
 }
 
 declare class TCP {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter?: EventEmitter);
 
-    emitter: EventEmitter | null;
+    emitter: EventEmitter | undefined;
     sport: uint16;
     dport: uint16;
     seqno: uint32;

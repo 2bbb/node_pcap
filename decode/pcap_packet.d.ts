@@ -22,12 +22,12 @@ declare class PcapHeader {
 }
 
 declare class PcapPacket {
-    constructor(emitter: EventEmitter | null);
+    constructor(emitter?: EventEmitter);
 
     link_type: LinkType;
     pcap_header: PcapHeader;
     payload: Payload | null;
-    emitter: any;
+    emitter: EventEmitter | undefined;
 
     decode(packet_with_header: PacketWithHeader, options?: PcapPacketDecodeOptions): PcapPacket;
     toString(): string;
