@@ -2,10 +2,10 @@ import { EventEmitter } from 'events';
 import PcapPacket = require('./decode/pcap_packet');
 
 export interface SessionStats {
-    recv_times: {string: number};
-    send_times: {string: number};
-    send_retrans: {string: number};
-    recv_retrans: {string: number};
+    recv_times: {[key: string]: number};
+    send_times: {[key: string]: number};
+    send_retrans: {[key: string]: number};
+    recv_retrans: {[key: string]: number};
     connect_duration: number;
     total_time: number;
     
@@ -91,7 +91,7 @@ export declare class TCPSession extends EventEmitter {
 export declare class TCPTracker extends EventEmitter {
     constructor();
     
-    sessions: {string: TCPSession};
+    sessions: {[key: string]: TCPSession};
     track_packet(packet: PcapPacket): void;
 
     on(event: "session", listener: (session: TCPSession) => any): this;
