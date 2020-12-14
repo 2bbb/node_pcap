@@ -64,6 +64,8 @@ function TCPOptions() {
     this.sack = null;
     this.timestamp = null;
     this.echo = null;
+    this.fastopen_kind = null;
+    this.fastopen_cookie = null;
 
     this._error = null;
 }
@@ -141,6 +143,14 @@ TCPOptions.prototype.decode = function (raw_packet, offset, len) {
             this.echo = raw_packet.readUInt32BE(offset);
             offset += 4;
             break;
+        case 34: {
+            // TCP Fast Open Cookie
+            this.fastopen_kind = raw_packet[offset];
+            const cookie_length = raw_packet[offset + 1];
+            this.fastopen_cookie = raw_packet.slice(offset + 2, cookie_length - 2);
+            offset += cookie_length;
+            break;
+        }
         case 254:
         case 255:
             //We do not know how to parse rfc6994 (Experimental TCP option)
