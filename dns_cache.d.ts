@@ -9,3 +9,5 @@ export declare class DNSCache {
     ptr(ip: string): string;
     on_ptr(err: NodeJS.ErrnoException, ip: string, domains: string[]): void;
 }
+
+export = DNSCache;
