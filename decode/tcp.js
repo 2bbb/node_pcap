@@ -64,6 +64,8 @@ function TCPOptions() {
     this.sack = null;
     this.timestamp = null;
     this.echo = null;
+
+    this._error = null;
 }
 
 TCPOptions.prototype.decode = function (raw_packet, offset, len) {
@@ -147,7 +149,9 @@ TCPOptions.prototype.decode = function (raw_packet, offset, len) {
             offset += raw_packet.readUInt8(offset + 1);
             break;
         default:
-            throw new Error("Don't know how to process TCP option " + raw_packet[offset]);
+            this._error = "Don't know how to process TCP option " + raw_packet[offset];
+            console.error(this_error);
+            return;
         }
     }
 
