@@ -40,8 +40,8 @@ declare class DNSRRSet {
     toString(): string;
 }
 
-export declare class DNS {
-    constructor(emitter: EventEmitter | null);
+declare class DNS {
+    constructor(emitter: EventEmitter | undefined);
 
     raw_packet: Buffer;
     offset: number;
@@ -74,3 +74,5 @@ declare function type_to_string(type_num: uint8): string;
 declare function qtype_to_string(qtype_num: uint8): string;
 declare function class_to_string(class_num: uint8): string;
 declare function qclass_to_string(qclass_num: uint8): string;
+
+export = DNS;
