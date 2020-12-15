@@ -6,8 +6,19 @@ import { Decode } from './decode';
 // FIXME: write rest of the typings
 export const decode: Decode;
 export import DNSCache = require('./dns_cache');
-export const TCPTracker: typeof tcp_tracker.TCPTracker;
-export const TCPSession: typeof tcp_tracker.TCPSession;
+
+export {
+    TCPTracker,
+    TCPSession
+} from './tcp_tracker'
+
+export {
+    PcapPacket,
+    EthernetPacket, 
+    IPv4Packet, 
+    IPv6Packet, 
+    ArpPacket
+} from './decode';
 
 /**
  * format of the link-layer headers; `LINKTYPE_<...>` string, see
